@@ -1,0 +1,680 @@
+:root {
+    --main_margin_between_elelments: 20px;
+    --main_color: #55c57a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 20px;
+    font-family: "Lato", sans-serif;;
+    background-color: #f7f7f7;
+
+}
+
+/* css for header */
+.header {
+    background: linear-gradient(to right
+    ,rgba(126, 213, 111, 0.8)
+    ,rgba(40, 180, 133, 0.8))
+    , url("/img/hero-small.jpg");
+    background-size: cover;
+    height: 100vh;
+    color: white;
+    clip-path: polygon(0% 0%, 100% 0%, 101% 75vh, 0 97%);
+}
+
+.header img {
+    padding: var(--main_margin_between_elelments);
+    width: 100px;
+}
+
+.text-in-header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+}
+
+.text-in-header h2 {
+    font-size: 3.5rem;
+    letter-spacing: 2.5rem;
+    font-weight: 400;
+
+}
+
+.text-in-header p {
+    text-align: center;
+    margin-top: -16px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 1rem;
+}
+
+
+
+.btnater {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 184%);
+    border: none;
+    width: 14rem;
+    height: 3.5rem;
+    border-radius: 92px;
+    color: gray;
+    text-transform: uppercase;
+}
+
+/* .btnater::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-radius: 92px;
+    background-color: white;
+    z-index: 0;
+    color: gray;
+    text-transform: uppercase;
+    transition: opacity,scale 0.5s ease;
+    cursor: pointer;
+}
+
+.btnater:hover::after {
+    transform: scale(1.4, 1.6);
+    transform: translateY(-3);
+    opacity: 1;
+    display: block;
+}
+.btnater:hover {
+    z-index: 1;
+} */
+
+.header .btnater {
+    color: gray;
+    background-color: white;
+}
+.header .btnater:hover {
+    transform: translate(-50%, 190%);
+}
+
+
+/* for section 2:  Exciting tours for adventurous people*/
+.section2 {
+    height: 100vh;
+    margin-left: 5rem;
+}
+
+
+/*first P */
+.section2 > p:first-of-type
+,.text-section4
+, .italic-text5 {
+    margin: 5vh 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    word-spacing: 1px;
+    font-size: 2rem;
+    background-image: linear-gradient(to right, rgb(126, 213, 111), rgb(40, 180, 133));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: TRANSPARENT;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+.section2 > p:first-of-type:hover
+,.text-section4:hover
+,.italic-text5:hover{
+    transform: scale(1.3) rotate(2deg);
+    text-shadow: 1px 4px 60px grey;
+    
+}
+
+
+/* this text and imgs */
+.p-imgs {
+    color: gray;
+    position: relative;
+    margin-top: 20vh;
+}
+.p-imgs div > p:first-of-type {
+    text-transform: uppercase;
+    word-spacing: 1px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+
+/* For imgs positon */
+
+
+/*-->this work in position but isn't  responsive then i try using grid
+
+.p-imgs {
+    width: fit-content;
+    position: absolute;
+    top: 0%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    } */
+    
+    
+/* .first-ps, .second-ps {
+    width: 36rem;
+} */
+
+
+.p-imgs {
+    display: grid;
+    grid-template-columns: minmax(0, 36rem) auto;
+    grid-template-rows: auto auto;
+}
+.first-ps {
+    grid-column: 1 / 2;
+}
+.second-ps {
+    grid-row: 2;
+    margin: 5vh 0;
+}
+
+.imgs {
+    position: relative;
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    margin-left: 10rem;
+}
+
+.p-imgs img {
+    position: absolute;
+    transition: all 0.3s ease;
+
+}
+
+.img1 {
+    top: -6vh;
+    left: -6rem;
+}
+.img2 {
+    left: 10rem;
+}
+.img3 {
+    top: 10vh;
+}
+
+.p-imgs img:hover {
+    border: 11px solid transparent;
+    z-index: 1;
+    transform: scale(1.2);
+    outline: 12px solid var(--main_color);
+}
+
+
+/* this for button in second section */
+.btn-learn-more {
+    color: var(--main_color);
+    text-decoration: underline;
+    border: none;
+    width: fit-content;
+    background-color: transparent;
+    font-size: 15px;
+    font-weight: 400;
+    transition: all 0.6s ease ;
+}
+
+.btn-learn-more:hover {
+    height: 4vh;
+    background-color: var(--main_color);
+    color: white;
+    transform: scale(01, 1.1);
+    /* margin-bottom: 1px; */
+    box-shadow: 4px 10px 36px 3px gray;
+    cursor: pointer;
+}
+
+
+/* third section 4 cards */
+
+
+/* style for icons */
+.icon-globe::before {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f0ac";
+    font-weight: 900;
+    font-size: 24px;
+    color: #000;
+}
+.icon-compass::before {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f14e"; /* Unicode for the compass icon */
+    font-weight: 900;
+    font-size: 24px; /* Adjust size as needed */
+    color: #000; /* Adjust color as needed */
+}
+.icon-book::before {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f02d";
+    font-weight: 900;
+    font-size: 24px;
+    color: #000;
+}
+.icon-heart::before {
+    font-family: 'Font Awesome 5 Free';
+    content: "\f004";
+    font-weight: 900;
+    font-size: 24px;
+    color: #000;
+}
+
+
+/* this for parent of cards */
+._4cards {
+    background: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(/img/nat-4.jpg);
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    clip-path: polygon(0% 17%, 100% 0%, 101% 75vh, 0 97%);
+    justify-content: space-evenly;
+
+}
+
+._4cards div {
+    color: gray;
+    text-align: center;
+    background-color: #ffffff9c;
+    padding: 2.5rem;
+    width: 14.3rem; 
+    margin: auto 20px;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+}
+
+._4cards div:hover {
+    transform: translate(0px, -15px);
+    box-shadow: 0px 0px 60px 10px rgba(128, 128, 128, 0.436);
+    
+}
+
+
+/* this for 3 Cards(Most popular tours and price) */
+.card-price {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: -14vh;
+
+}
+
+.card {
+    width: 17rem;
+    background: white;
+    height: 80vh;
+    position: relative;
+    box-shadow: 10px 10px 42px 8px #b4b4b4;
+    text-align: center;
+    color: gray;
+}
+
+/* this for head of card */
+.card div:first-of-type {
+    height: 40vh;
+    margin-top: -5vh;
+    clip-path: polygon(0% 0%, 100% 0%, 101% 14rem, 0 100%);
+}
+
+.c-flip1 div:first-of-type {
+    background-image: linear-gradient(to right bottom
+    ,rgb(255, 185, 0, 0.8)
+    , rgba(255, 119, 48, 0.8))
+    , url(/img/nat-5.jpg);
+    background-size: cover;
+    transition: scaleY 0.5s ease; /*this for flip*/
+}
+.c-flip2 div:first-of-type {
+    background-image: linear-gradient(to right
+    ,rgba(126, 213, 111, 0.8)
+    , rgba(40, 180, 133, 0.8))
+    , url(/img/nat-6.jpg);
+    background-size: cover;
+}
+.c-flip3 div:first-of-type {
+    background-image: linear-gradient(to right bottom
+    , rgb(41, 152, 255, 0.8)
+    , rgb(86, 67, 250, 0.8))
+    , url(/img/nat-7.jpg);
+    background-size: cover;
+}
+
+/* this for words in 3 cards */
+.font {
+    width: 13rem;
+    color: white;
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    position: absolute;
+    width: fit-content;
+    height: 6vh;
+}
+
+.card1 {
+    background-image: linear-gradient(to right bottom
+    , rgba(255, 185, 0, 0.85)
+    , rgba(255, 119, 48, 0.85));
+}
+.card1-p1 {
+    bottom: 50vh;
+    right: 1rem;
+}
+.card1-p2 {
+    bottom: 44vh;
+    right: 0;
+}
+
+
+.card2 {
+    background-image: linear-gradient(to right bottom 
+    ,rgba(126, 213, 111, 0.85)
+    , rgba(40, 180, 133, 0.85));
+}
+.card2-p1 {
+    bottom: 50vh;
+    right: 1rem;
+}
+.card2-p2 {
+    bottom: 44vh;
+    right: 0;
+}
+
+
+.card3 {
+    background-image: linear-gradient(to right bottom
+    , rgba(41, 152, 255, 0.85)
+    , rgba(86, 67, 250, 0.85));
+}
+.card3-p1 {
+    bottom: 50vh;
+    right: 1rem;
+}
+.card3-p2 {
+    bottom: 44vh;
+    right: 0;
+}
+
+
+/* this for flip cards */
+.c-flip1 {
+    position: relative;
+}
+.content-when-flip {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card:hover .content-when-flip {
+    clip-path: polygon(0% 0%, 100% 0%, 101% 100%, 0 100%);
+    z-index: 10;
+    height: 85vh;
+    top: 0;
+    left: 0;
+    width: 17rem;
+}
+.c-flip1:hover .content-when-flip {
+    background-image: linear-gradient(to right bottom, rgb(255, 185, 0), rgb(255, 119, 48));
+}
+.c-flip2:hover .content-when-flip {
+    background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
+.c-flip3:hover .content-when-flip {
+    background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
+}
+
+.content-when-flip p:first-of-type {
+    /* margin: 1vh 0; */
+    color: white;
+    font-weight: 500;
+    /* font-size: 1.2rem; */
+    text-transform: uppercase;
+    position: absolute;
+    top: 20vh;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+p.price {
+    position: absolute;
+    left: 50%;
+    top: 26%;
+    transform: translate(-50%, 0);
+    font-size: xxx-large;
+    font-weight: 200;
+    color: white;
+}
+
+button.btn-flip {
+    position: absolute;
+    top: 69%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 9rem;
+    height: 10vh;
+    border: none;
+    border-radius: 34px;
+    color: gray;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    word-spacing: 3rem;
+}
+
+.card:hover .content-when-flip {
+    transform: rotateY(180deg) scaleX(-1);
+    transform-origin: center;
+    transition: transform 0.6s ease;
+}
+
+/* for button after discover */
+.discover2 {
+    position: relative;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    border: none;
+    background-color: #55c57a;
+    color: #fff;
+}
+.discover2:hover {
+    bottom: 50%;
+    top: 50%;
+    transform: translate(-17vh, 6rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.sec5 {
+    height: 120vh;
+    margin-top: 20vh;
+    padding-top: 30vh;
+    position: relative;
+    display: grid;
+    align-items: center;
+    justify-content: space-around;
+    justify-items: center;
+    row-gap: 10vh;
+}
+
+.back-ground-video {
+    position: absolute;
+    top: 33vh;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.15;
+    transform: scaleY(1.7);
+}
+.first-opinion {
+    display: flex;
+    align-items: center;
+    max-width: 60rem;
+    padding: 16px;
+    background-color: #ffffffb8;
+    color: gray;
+    clip-path: polygon(6% 0%, 100% 0%, 94% 100%, 0% 100%);
+    position: relative;
+}
+.first-opinion img {
+    width: 15rem;
+    height: 15rem;
+    clip-path: circle(35%);
+}
+
+p.name {
+    position: absolute;
+    z-index: -1;
+    top: 14vh;
+    left: 6rem;
+    width: 5rem;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    transition: transform 0.6s ease;
+}
+.circle-img {
+    transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.first-opinion:hover .name {
+    z-index: 10;
+    transform: translateY(-3vh);
+    
+}
+.first-opinion:hover .circle-img {
+    filter: blur(3px) brightness(80%);
+    transform: scale(0.8);
+}
+.first-opinion:hover {
+    background-color: #ffffffff;
+}
+
+
+/* last section login */
+.last{ 
+    height: 96vh;
+    margin-top: 49vh;
+    background-image: linear-gradient(to right bottom, rgb(126, 213, 111), rgb(40, 180, 133));
+    margin-bottom: 4vh;
+    position: relative;
+}
+
+
+.login {
+    max-width: 70rem;
+    height: 65vh;
+    background-image: url(/img/nat-10.jpg);
+    background-size: cover;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.myform {
+    position: absolute;
+    width: 55%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(/img/nat-10.jpg);
+    clip-path: polygon(0% 0%, 100% 0%, 80% 65vh, 0 100%);
+    padding-top: 70px;
+}
+
+form {
+    display: grid;
+    max-width: 30rem;
+    height: 33vh;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-evenly;
+    grid-template-columns: 1fr;
+}
+
+input[type="text"] {
+    border: none;
+    width: 20rem;
+    height: 6vh;
+    background-color: rgb(255 255 255 / 50%);
+    outline: none;
+}
+
+.myform .italic-text5 {
+    width: fit-content;
+    margin-left: 67px;
+}
+
+.input1:focus {
+    border-bottom: 3px solid rgb(85, 197, 122);
+}
+.input2:focus {
+    border-bottom: 3px solid rgb(255, 119, 48);
+}
+
+.radio1 {
+    grid-row: 3;
+    grid-column: 1;
+    margin-left: 12rem;
+    position: relative;
+    /* top: 2px; */
+}
+
+/* this for before radio input */
+#Small::before, 
+#Large::before{
+    content: "";
+    border: 8px solid white;
+    display: inline-block;
+    border-radius: 10px;
+    position: absolute;
+    left: 3px;
+    top: 1px;
+    outline: 5px solid rgb(126, 213, 111);
+}
+
+.radio2 {
+    grid-row: 3;
+    grid-column: 1;
+    margin-right: 12rem;
+    position: relative;
+}
+
+.radio1:focus-within #Small::before {
+    border: 8px solid rgb(126, 213, 111);
+}
+.radio2:focus-within #Large::before {
+    border: 8px solid rgb(126, 213, 111);
+}
+
+
+input.btnater.discover2 {
+    position: absolute;
+    top: 44vh;
+    left: 9rem;
+    width: 9rem;
+}
+input.btnater.discover2:hover {
+    transform: translate(-9vh, 6rem);
+}
